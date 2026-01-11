@@ -27,12 +27,6 @@ class BookTypeSerializer(serializers.ModelSerializer):
         
 """Создаем Сериализацию для Модели Book"""
 class BookSerializer(serializers.ModelSerializer):
-    # Автор
-    author = AuthorSerializer(read_only=True)
-    # Жанр
-    genre = GenreSerializer(read_only=True)
-    # тип книги
-    book_type = BookTypeSerializer(read_only=True)
     
     class Meta:
         model = Book

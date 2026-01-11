@@ -22,12 +22,16 @@ class Author(models.Model):
 class Genre(models.Model):
     
     # заголовок жанра книги
+<<<<<<< Updated upstream
     title = models.CharField(max_length=20,choices=[
         ('the class','классика'),
         ('drama','драма' ),
         ('comedi','комедия'),
         ('fantastic','фантастика'),
     ])
+=======
+    title = models.CharField(max_length=50)
+>>>>>>> Stashed changes
     
     """Передаем магический метод str"""
     def __str__(self) -> str:
@@ -38,11 +42,8 @@ class Genre(models.Model):
 class  BookType(models.Model):
     
     # тип книги
-    book_type = models.CharField(max_length=100,choices=[
-        ('glossy','глянцевая'),
-        ('hardcover books','твердый переплет'),
-        ('softcover books','мягкий переплет'),   
-    ])
+    book_type = models.CharField(max_length=True)
+
     
     """Передаем магический метод str"""   
     def __str__(self) -> str:

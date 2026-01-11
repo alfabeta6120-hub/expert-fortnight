@@ -5,6 +5,7 @@ from rest_framework import viewsets
 
 """Создаем Представление для Модели Author"""
 class AuthorViewSet(viewsets.ModelViewSet):
+<<<<<<< Updated upstream
     
     queryset = Author.objects.all()
     serializer_class = AuthorSerializer
@@ -34,3 +35,31 @@ class BookViewSet(viewsets.ModelViewSet):
     
     
     
+=======
+    
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
+    
+    
+"""Создаем Представление для Модели Genre"""    
+class GenreViewSet(viewsets.ModelViewSet):
+    
+    queryset = Genre.objects.all()
+    serializer_class = GenreSerializer
+    
+    
+"""Создаем Представление для Модели BookType"""    
+class BookTypeViewSet(viewsets.ModelViewSet):
+    
+    queryset = BookType.objects.all()
+    serializer_class = BookTypeSerializer
+    
+    
+"""Создаем Представление для Модели Book"""   
+class BookViewSet(viewsets.ModelViewSet):
+    
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+        
+        
+>>>>>>> Stashed changes
