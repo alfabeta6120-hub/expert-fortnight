@@ -7,7 +7,7 @@ class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Author 
         # передаем атрибуты модели
-        fields = [ 'id','name','year_of_birth','bio','country']
+        fields = [ 'id','name','year_of_birth','biography','country']
         
         
 """Создаем Сериализацию для Модели Genre"""

@@ -9,7 +9,7 @@ class Author(models.Model):
     # год рождения
     year_of_birth = models.CharField(max_length=10)
     # биография
-    bio = models.TextField(blank=True)
+    biography = models.TextField(blank=True)
     # страна
     country = models.CharField(max_length=15)
     
@@ -23,6 +23,7 @@ class Genre(models.Model):
     
     # заголовок жанра книги
     title = models.CharField(max_length=20,choices=[
+        ('the class','классика'),
         ('drama','драма' ),
         ('comedi','комедия'),
         ('fantastic','фантастика'),

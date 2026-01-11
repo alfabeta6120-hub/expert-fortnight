@@ -25,4 +25,4 @@ class BorrowingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Borrowing
          #  передаем атрибуты модели
-        fields = ['id','book_booking','date_of_issue','deadline','fine','book_copy','user']
+        fields = ['id','booking','date_of_issue','deadline','forfeit','book_copy','user']

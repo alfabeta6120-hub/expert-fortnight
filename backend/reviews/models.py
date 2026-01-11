@@ -1,6 +1,8 @@
 from django.db import models
 from users.models import User
 
+
+
 """Создаем Модель Reviews (отзывы)"""
 class Reviews(models.Model):
     
@@ -12,9 +14,9 @@ class Reviews(models.Model):
     
     # оценка
     estimation = models.CharField(max_length=20,choices=[
-        ('badly','плохо'),
         ('good','хорошо'),
         ('excellent','отлично'),
+        ('badly','плохо'),
         
     ])
     

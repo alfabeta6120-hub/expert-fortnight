@@ -22,17 +22,18 @@ class BookCopy(models.Model):
     book = models.ForeignKey(Book,on_delete=models.CASCADE)
     
     
-    
     """Передаем магический метод str"""
     def __str__(self) -> str:
         return self.quantity
+    
+    
     
     
 """Создаем Модель Borrowing (выдача книги)"""
 class Borrowing(models.Model):
     
     # бронирование книг
-    book_booking = models.CharField(max_length=20,choices=[
+    booking = models.CharField(max_length=20,choices=[
         ('Three days','три дня'),
         ('seven days','семь дней'),
     ])
@@ -44,7 +45,7 @@ class Borrowing(models.Model):
     deadline = models.DateTimeField(auto_now=True)
     
     # Штраф
-    fine = models.PositiveIntegerField()
+    forfeit = models.PositiveIntegerField()
     
     """Передаем Модели по первичному ключу"""
     # тип книги
@@ -54,5 +55,5 @@ class Borrowing(models.Model):
     
     """Передаем магический метод str"""
     def __str__(self) -> str:
-        return self.book_booking
+        return self.booking
     

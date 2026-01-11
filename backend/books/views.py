@@ -1,42 +1,36 @@
 from .models import Author,Genre,BookType,Book
-from rest_framework import serializers
+from .serializers import AuthorSerializer,GenreSerializer,BookTypeSerializer,BookSerializer
+from rest_framework import viewsets
 
-"""Создаем Сериализацию для Модели Author"""
-class AuthorSerializer(serializers.ModelSerializer):
+
+"""Создаем Представление для Модели Author"""
+class AuthorViewSet(viewsets.ModelViewSet):
     
-    class Meta:
-        model = Author 
-        # передаем атрибуты модели
-        fields = [ 'id','name','year_of_birth','bio','country']
-        
-        
-"""Создаем Сериализацию для Модели Genre"""
-class GenreSerializer(serializers.ModelSerializer):
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
     
-    class Meta:
-        model = Genre 
-        #  передаем атрибуты модели
-        fields = ['id','title']
-        
-"""Создаем Сериализацию для Модели BookType"""
-class BookTypeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = BookType
-        #  передаем атрибуты модели
-        fields = ['id','book_type']
-        
-"""Создаем Сериализацию для Модели Book"""
-class BookSerializer(serializers.ModelSerializer):
-    # Автор
-    author = AuthorSerializer(read_only=True)
-    # Жанр
-    genre = GenreSerializer(read_only=True)
-    # тип книги
-    book_type = BookTypeSerializer(read_only=True)
     
-    class Meta:
-        model = Book
-        #  передаем атрибуты модели
-        fields = ['id','author','genre','book_type']
-        
-        
+"""Создаем Представление для Модели Genre"""    
+class GenreViewSet(viewsets.ModelViewSet):
+    
+    queryset = Genre.objects.all()
+    serializer_class = GenreSerializer
+    
+    
+"""Создаем Представление для Модели BookType"""    
+class BookTypeViewSet(viewsets.ModelViewSet):
+    
+    queryset = BookType.objects.all()
+    serializer_class = BookTypeSerializer
+    
+    
+"""Создаем Представление для Модели Book"""   
+class BookViewSet(viewsets.ModelViewSet):
+    
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    
+    
+    
+    
+    
